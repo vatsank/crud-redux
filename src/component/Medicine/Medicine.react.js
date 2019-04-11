@@ -1,6 +1,6 @@
 import React from 'react';
-
-
+import { fetchAllMedicines } from '../../action/action';
+import {connect} from 'react-redux';
 
 const Medicine = (props) => {
 
@@ -12,22 +12,24 @@ const Medicine = (props) => {
         <div>{props.medicine.qunatity}</div>
         
 
+        <button onClick={props.getMedicines}>Fetch</button>
         </div>
     );
 
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
-        prop: state.prop
+        prop: state.payload
     }
 }
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        dispatch1: () => {
-            dispatch(actionCreator)
+        getMedicines: () => {
+            dispatch(fetchAllMedicines())
         }
     }
 }
-export default connect(mapStateToProps, 
-    mapDispatchToProps, mergeProps)(Medicine)
+export default  connect(mapStateToProps, 
+    mapDispatchToProps)(Medicine)
+

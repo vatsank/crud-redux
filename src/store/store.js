@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger'
-import medicineReducer from '../reducer/reducer';
+import {medicineReducer} from '../reducer/reducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 const loggerMiddleware = createLogger()
 

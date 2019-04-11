@@ -2,7 +2,7 @@ const nameInitialState = {}
 export const medicineReducer = (state = nameInitialState, action) => {
     switch (action.type) {
         case "FETCH_MEDICINE":
-            return action.state
+            return Object.assign({},action);
         case "ADD_MEDICINE":
             return state
         default:
