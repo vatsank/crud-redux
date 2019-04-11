@@ -1,0 +1,9 @@
+{
+
+    "medicines": [
+        { "id": 101, "code": "H", "productName": "crocin", "quantity": 200 },
+        { "id": 102, "code": "K", "productName": "novalgin", "quantity": 100 }
+
+    ]
+
+}
