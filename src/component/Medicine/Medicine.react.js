@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 const Medicine = (props) => {
 
-     if(!props.prop){
+     if(!props.list){
 
         return(
             <div>
@@ -17,22 +17,18 @@ const Medicine = (props) => {
         );
      } else {
     return (
-
-      
+   
             
         <div >
         <ul>
         {
-            props.prop.map((list,index)=>{
+            props.list.map((list,index)=>{
                 return(
-             <li key={list.code}>Hi{list.productName}</li>
+             <li key={list.code}>{list.productName}</li>
                 )
             })
         }
         </ul>
-        
-        
-
         </div>
     )
     }
@@ -42,7 +38,7 @@ const Medicine = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        prop: state.payload
+        list: state.payload
     }
 }
 const mapDispatchToProps = (dispatch) => {

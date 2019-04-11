@@ -1,5 +1,16 @@
 import axios from 'axios';
 
+export const addMedicine  = () => ({
+    type: 'ADD_MEDICINE'
+
+})
+
+export const handleInputChange  = (name,value) => ({
+    type: 'HANDLE_INPUT_CHANGE',
+    payload: { [name]: value}
+
+})
+
 export const fetchMedicine = (payload) => ({
     type: 'FETCH_MEDICINE',
     payload
@@ -19,3 +30,4 @@ export const fetchAllMedicines =()=>{
 
     }
 }
+
