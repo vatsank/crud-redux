@@ -4,17 +4,39 @@ import {connect} from 'react-redux';
 
 const Medicine = (props) => {
 
+     if(!props.prop){
+
+        return(
+            <div>
+            <h2>Click Button to Fetch</h2>
+
+            <button onClick={props.getMedicines}>Fetch</button>
+
+            </div>
+
+        );
+     } else {
     return (
+
+      
+            
         <div >
+        <ul>
+        {
+            props.prop.map((list,index)=>{
+                return(
+             <li key={list.code}>Hi{list.productName}</li>
+                )
+            })
+        }
+        </ul>
         
-        <div>{props.medicine.code}</div>
-        <div>{props.medicine.productName}</div>
-        <div>{props.medicine.qunatity}</div>
         
 
-        <button onClick={props.getMedicines}>Fetch</button>
         </div>
-    );
+    )
+    }
+    
 
 }
 
